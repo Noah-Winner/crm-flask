@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block inhalt %}
+<h1>Meine Kundenliste</h1>
+<ul>
+    {% for kunde in kunden %}
+    <li>
+        {{ kunde["name"] }}, {{ kunde["email"] }}, {{ kunde["telefon"] }}
+        <a href="/loeschen/{{ kunde['id'] }}">Löschen</a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block inhalt %}
+<h1>Neuen Kunden hinzufügen</h1>
+<form method="POST">
+    <label>Name:</label><br>
+    <input type="text" name="name" required><br><br>
+
+    <label>E-Mail:</label><br>
+    <input type="email" name="email" required><br><br>
+
+    <label>Telefon:</label><br>
+    <input type="text" name="telefon" required><br><br>
+
+    <button type="submit">Kunde speichern</button>
+</form>
+{% endblock %}
