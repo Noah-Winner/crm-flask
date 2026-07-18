@@ -27,6 +27,24 @@ def neuer_kunde():
         return render_template("erfolg.html", name=name)
     return render_template("formular.html")
 
+@app.route("/bearbeiten/<int:id>", methods=["GET", "POST"])
+def kunde_bearbeiten(id):
+    conn = verbindung()
+    if request.method == "POST":
+        name = request.form["name"]
+        email = request.form["email"]
+        telefon = request.form["telefon"]
+        conn.execute(
+            "UPDATE kunden SET name = ?, email = ?, telefon = ? WHERE id = ?",
+            (name, email, telefon, id)
+        )
+        conn.commit()
+        conn.close()
+        return render_template("erfolg.html", name=name)
+    kunde = conn.execute("SELECT * FROM kunden WHERE id = ?", (id,)).fetchone()
+    conn.close()
+    return render_template("bearbeiten.html", kunde=kunde)
+
 @app.route("/loeschen/<int:id>")
 def kunde_loeschen(id):
     conn = verbindung()

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block inhalt %}
+<h1>Kunde bearbeiten</h1>
+<form method="POST">
+    <label>Name:</label><br>
+    <input type="text" name="name" value="{{ kunde['name'] }}" required><br><br>
+
+    <label>E-Mail:</label><br>
+    <input type="email" name="email" value="{{ kunde['email'] }}" required><br><br>
+
+    <label>Telefon:</label><br>
+    <input type="text" name="telefon" value="{{ kunde['telefon'] }}" required><br><br>
+
+    <button type="submit">Änderungen speichern</button>
+</form>
+{% endblock %}

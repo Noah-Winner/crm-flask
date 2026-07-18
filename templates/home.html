@@ -6,6 +6,7 @@
     {% for kunde in kunden %}
     <li>
         {{ kunde["name"] }}, {{ kunde["email"] }}, {{ kunde["telefon"] }}
+        <a href="/bearbeiten/{{ kunde['id'] }}">Bearbeiten</a>
         <a href="/loeschen/{{ kunde['id'] }}">Löschen</a>
     </li>
     {% endfor %}
