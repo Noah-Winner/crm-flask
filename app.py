@@ -6,10 +6,17 @@ tabelle_erstellen()
 
 @app.route("/")
 def home():
+    suche = request.args.get("suche", "")
     conn = verbindung()
-    kunden = conn.execute("SELECT * FROM kunden").fetchall()
+    if suche:
+        kunden = conn.execute(
+            "SELECT * FROM kunden WHERE name LIKE ?",
+            (f"%{suche}%",)
+        ).fetchall()
+    else:
+        kunden = conn.execute("SELECT * FROM kunden").fetchall()
     conn.close()
-    return render_template("home.html", kunden=kunden)
+    return render_template("home.html", kunden=kunden, suche=suche)
 
 @app.route("/neu", methods=["GET", "POST"])
 def neuer_kunde():

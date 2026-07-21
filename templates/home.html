@@ -2,6 +2,15 @@
 
 {% block inhalt %}
 <h1>Kundenliste</h1>
+<form method="GET" style="margin-bottom: 20px;">
+    <input 
+        type="text" 
+        name="suche" 
+        placeholder="Nach Name suchen..." 
+        value="{{ suche }}"
+        style="width: 300px; margin-bottom: 0;">
+    <button type="submit" class="btn btn-blau" style="padding: 10px 16px;">Suchen</button>
+</form>
 <table>
     <tr>
         <th>Name</th>
