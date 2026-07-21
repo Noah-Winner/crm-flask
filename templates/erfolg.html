@@ -1,7 +1,10 @@
 {% extends "base.html" %}
 
 {% block inhalt %}
-<h1>Kunde gespeichert!</h1>
-<p>{{ name }} wurde erfolgreich hinzugefügt.</p>
-<a href="/">Zurück zur Kundenliste</a>
+<div class="erfolg-box">
+    <h1>Gespeichert!</h1>
+    <p>{{ name }} wurde erfolgreich gespeichert.</p>
+    <br>
+    <a href="/">Zurück zur Kundenliste</a>
+</div>
 {% endblock %}
