@@ -35,7 +35,7 @@ Ein webbasiertes CRM-System (Customer Relationship Management) gebaut mit Python
 
 ## Screenshots
 
-(folgen)
+![CRM Screenshot](Screenshot.png)
 
 ## Autor
 
